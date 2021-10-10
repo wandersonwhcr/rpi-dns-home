@@ -1,0 +1,8 @@
+- name: DHCP
+  hosts: all
+  tasks:
+
+    - name: Install
+      ansible.builtin.apt:
+        pkg:
+          - udhcpd

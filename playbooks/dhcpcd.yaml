@@ -1,4 +1,4 @@
-- name: DHCP Client Daemon
+- name: DHCP Client
   hosts: all
   tasks:
 

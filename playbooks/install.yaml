@@ -1,4 +1,5 @@
 - ansible.builtin.import_playbook: packages.yaml
 - ansible.builtin.import_playbook: dhcpcd.yaml
+- ansible.builtin.import_playbook: dhcpd.yaml
 - ansible.builtin.import_playbook: bluetooth.yaml
 - ansible.builtin.import_playbook: unbound.yaml
