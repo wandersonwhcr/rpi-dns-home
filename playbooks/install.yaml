@@ -1,4 +1,4 @@
-- name: Update
+- name: Install
   hosts: all
   tasks:
 
@@ -17,3 +17,16 @@
       ansible.builtin.apt:
         pkg:
           - vim
+
+    - name: DHCP Client Daemon Static IP
+      ansible.builtin.copy:
+        src: ./files/etc/dhcpcd.conf
+        dest: /etc/dhcpcd.conf
+        backup: yes
+      register: dhcpcd
+
+    - name: DHCP Client Daemon Restart
+      ansible.builtin.service:
+        name: dhcpcd
+        state: restarted
+      when: dhcpcd.changed
