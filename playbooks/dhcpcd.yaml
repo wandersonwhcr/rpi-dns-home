@@ -8,7 +8,7 @@
           - isc-dhcp-client
 
     - name: Config
-      ansible.builtin.copy:
+      ansible.builtin.template:
         src: ./files/etc/dhcpcd.conf
         dest: /etc/dhcpcd.conf
         backup: yes

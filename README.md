@@ -26,6 +26,8 @@ all:
     ansible_python_interpreter: "/usr/bin/python"
     ansible_ssh_private_key_file: "dns-server.key"
     ansible_user: "pi"
+    raspberry_cidr: "192.168.0.2/24"
+    raspberry_router_addr: "192.168.0.1"
 EOF
 ```
 
