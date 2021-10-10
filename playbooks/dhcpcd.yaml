@@ -12,10 +12,12 @@
         src: ./files/etc/dhcpcd.conf
         dest: /etc/dhcpcd.conf
         backup: yes
-      register: config
+      notify:
+        - Service
+
+  handlers:
 
     - name: Service
       ansible.builtin.service:
         name: dhcpcd
         state: restarted
-      when: config.changed

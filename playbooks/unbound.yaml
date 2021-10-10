@@ -13,10 +13,12 @@
         dest: /etc/unbound/unbound.conf
         validate: /usr/sbin/unbound-checkconf %s
         backup: yes
-      register: config
+      notify:
+        - Service
+
+  handlers:
 
     - name: Service
       ansible.builtin.service:
         name: unbound
         state: restarted
-      when: config.changed

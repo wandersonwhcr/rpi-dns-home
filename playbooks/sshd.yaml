@@ -12,10 +12,11 @@
         src: ./files/etc/ssh/sshd_config
         dest: /etc/ssh/sshd_config
         backup: yes
-      register: config
+      notify: Service
+
+  handlers:
 
     - name: Service
       ansible.builtin.service:
         name: sshd
         state: restarted
-      when: config.changed

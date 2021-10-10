@@ -12,29 +12,33 @@
         src: ./files/etc/init.d/udhcpd
         dest: /etc/init.d/udhcpd
         backup: yes
-      register: config
-
-    - name: Systemd Reload
-      ansible.builtin.command:
-        cmd: systemctl daemon-reload
-      when: config.changed
+      notify:
+        - Systemd Reload
 
     - name: Enable
       ansible.builtin.copy:
         src: ./files/etc/default/udhcpd
         dest: /etc/default/udhcpd
         backup: yes
+      notify:
+        - Service
 
     - name: Config
       ansible.builtin.template:
         src: ./files/etc/udhcpd.conf
         dest: /etc/udhcpd.conf
         backup: yes
-      register: config
+      notify:
+        - Service
+
+  handlers:
+
+    - name: Systemd Reload
+      ansible.builtin.command:
+        cmd: systemctl daemon-reload
 
     - name: Service
       ansible.builtin.service:
         name: udhcpd
         enabled: yes
         state: restarted
-      when: config.changed
