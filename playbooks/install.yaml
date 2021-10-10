@@ -35,3 +35,9 @@
         name: dhcpcd
         state: restarted
       when: dhcpcd.changed
+
+    - name: Bluetooth Disable
+      ansible.builtin.service:
+        name: bluetooth
+        enabled: no
+        state: stopped
