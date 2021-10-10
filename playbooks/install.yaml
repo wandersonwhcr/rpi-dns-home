@@ -1,0 +1,7 @@
+- name: Update
+  hosts: all
+  tasks:
+    - name: Upgrade
+      ansible.builtin.apt:
+        update_cache: yes
+        upgrade: dist
