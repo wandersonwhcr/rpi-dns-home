@@ -1,0 +1,10 @@
+ListenAddress {{ raspberry_addr }}
+
+UsePAM yes
+
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server

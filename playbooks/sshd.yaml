@@ -1,0 +1,21 @@
+- name: SSH
+  hosts: all
+  tasks:
+
+    - name: Install
+      ansible.builtin.apt:
+        pkg:
+          - openssh-server
+
+    - name: Config
+      ansible.builtin.template:
+        src: ./files/etc/ssh/sshd_config
+        dest: /etc/ssh/sshd_config
+        backup: yes
+      register: config
+
+    - name: Service
+      ansible.builtin.service:
+        name: sshd
+        state: restarted
+      when: config.changed

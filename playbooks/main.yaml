@@ -1,5 +1,6 @@
 - ansible.builtin.import_playbook: raspberry.yaml
 - ansible.builtin.import_playbook: packages.yaml
+- ansible.builtin.import_playbook: sshd.yaml
 - ansible.builtin.import_playbook: avahi.yaml
 - ansible.builtin.import_playbook: bluetooth.yaml
 - ansible.builtin.import_playbook: dhcpd.yaml
