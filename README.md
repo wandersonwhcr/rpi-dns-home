@@ -41,3 +41,8 @@ EOF
 ```
 docker-compose run --rm ansible
 ```
+
+## License
+
+This package is opensource and available under MIT license described in
+[LICENSE](https://github.com/wandersonwhcr/rpi-dns-home/blob/main/LICENSE).
