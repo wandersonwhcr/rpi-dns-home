@@ -28,6 +28,10 @@ all:
     ansible_user: "pi"
     raspberry_cidr: "192.168.0.2/24"
     raspberry_router_addr: "192.168.0.1"
+    raspberry_dhcpd_start: "192.168.0.10"
+    raspberry_dhcpd_end: "192.168.0.254"
+    raspberry_dhcpd_subnet: "255.255.255.0"
+    raspberry_dhcpd_dns: "192.168.0.2"
 EOF
 ```
 

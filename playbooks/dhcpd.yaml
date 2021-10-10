@@ -14,7 +14,7 @@
         backup: yes
 
     - name: Config
-      ansible.builtin.copy:
+      ansible.builtin.template:
         src: ./files/etc/udhcpd.conf
         dest: /etc/udhcpd.conf
         backup: yes
