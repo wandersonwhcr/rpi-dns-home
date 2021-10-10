@@ -7,6 +7,18 @@
         pkg:
           - udhcpd
 
+    - name: Systemd Unit
+      ansible.builtin.copy:
+        src: ./files/etc/init.d/udhcpd
+        dest: /etc/init.d/udhcpd
+        backup: yes
+      register: config
+
+    - name: Systemd Reload
+      ansible.builtin.command:
+        cmd: systemctl daemon-reload
+      when: config.changed
+
     - name: Enable
       ansible.builtin.copy:
         src: ./files/etc/default/udhcpd
