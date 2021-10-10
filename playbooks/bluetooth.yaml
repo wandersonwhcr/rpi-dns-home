@@ -2,7 +2,7 @@
   hosts: all
   tasks:
 
-    - name: Service Disable
+    - name: Service
       ansible.builtin.service:
         name: bluetooth
         enabled: no

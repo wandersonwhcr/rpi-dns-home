@@ -16,4 +16,6 @@
     - name: Install Basic
       ansible.builtin.apt:
         pkg:
+          - dnsutils
+          - telnet
           - vim
