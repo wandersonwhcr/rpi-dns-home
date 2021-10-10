@@ -9,6 +9,8 @@ services:
         ALPINE_VERSION: "3.14"
     volumes:
       - ".:/app"
+    environment:
+      HOME: "/app"
     working_dir: "/app"
     user: "${UID:-1000}:${GID:-1000}"
-    entrypoint: ["ansible", "--inventory", "./inventory.ini"]
+    entrypoint: ["ansible"]
