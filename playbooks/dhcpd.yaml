@@ -1,4 +1,4 @@
-- name: DHCP
+- name: DHCP Server
   hosts: all
   tasks:
 
