@@ -1,3 +1,5 @@
-FROM alpine:3.14
+ARG ALPINE_VERSION
+
+FROM alpine:${ALPINE_VERSION}
 
 RUN apk add ansible

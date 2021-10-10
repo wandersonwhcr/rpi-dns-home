@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+
+  ansible:
+    build:
+      context: "."
+      args:
+        ALPINE_VERSION: "3.14"
+    volumes:
+      - ".:/app"
+    working_dir: "/app"
