@@ -17,6 +17,5 @@ ssh -i dns-server.key pi@$DNS_HOST hostname
 ## Running
 
 ```
-docker-compose run --rm ansible playbooks/hostname.yaml
 docker-compose run --rm ansible playbooks/install.yaml
 ```
