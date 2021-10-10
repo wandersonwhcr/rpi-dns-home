@@ -28,6 +28,8 @@ all:
     ansible_user: "pi"
     raspberry_addr: "192.168.0.2"
     raspberry_cidr: "192.168.0.2/24"
+    raspberry_hostname: "tingle"
+    raspberry_domain: "home"
     raspberry_router_addr: "192.168.0.1"
     raspberry_dhcpd_start: "192.168.0.10"
     raspberry_dhcpd_end: "192.168.0.254"
