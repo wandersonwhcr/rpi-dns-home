@@ -1,0 +1,21 @@
+- name: DHCP Client Daemon
+  hosts: all
+  tasks:
+
+    - name: Install
+      ansible.builtin.apt:
+        pkg:
+          - isc-dhcp-client
+
+    - name: IP Static
+      ansible.builtin.copy:
+        src: ./files/etc/dhcpcd.conf
+        dest: /etc/dhcpcd.conf
+        backup: yes
+      register: dhcpcd
+
+    - name: Restart
+      ansible.builtin.service:
+        name: dhcpcd
+        state: restarted
+      when: dhcpcd.changed

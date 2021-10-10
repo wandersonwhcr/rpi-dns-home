@@ -1,0 +1,19 @@
+- name: Packages
+  hosts: all
+  tasks:
+
+    - name: Upgrade
+      ansible.builtin.apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Remove Unused
+      ansible.builtin.apt:
+        pkg:
+          - nano
+        state: absent
+
+    - name: Install Basic
+      ansible.builtin.apt:
+        pkg:
+          - vim
