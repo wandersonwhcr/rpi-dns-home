@@ -6,3 +6,23 @@
       ansible.builtin.apt:
         pkg:
           - udhcpd
+
+    - name: Enable
+      ansible.builtin.copy:
+        src: ./files/etc/default/udhcpd
+        dest: /etc/default/udhcpd
+        backup: yes
+
+    - name: Config
+      ansible.builtin.copy:
+        src: ./files/etc/udhcpd.conf
+        dest: /etc/udhcpd.conf
+        backup: yes
+      register: config
+
+    - name: Service
+      ansible.builtin.service:
+        name: udhcpd
+        enabled: yes
+        state: restarted
+      when: config.changed
