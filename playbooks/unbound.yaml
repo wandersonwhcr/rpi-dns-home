@@ -8,7 +8,7 @@
           - unbound
 
     - name: Config
-      ansible.builtin.copy:
+      ansible.builtin.template:
         src: ./files/etc/unbound/unbound.conf
         dest: /etc/unbound/unbound.conf
         validate: /usr/sbin/unbound-checkconf %s
