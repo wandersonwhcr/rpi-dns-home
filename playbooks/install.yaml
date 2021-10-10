@@ -18,6 +18,11 @@
         pkg:
           - vim
 
+    - name: Install Packages
+      ansible.builtin.apt:
+        pkg:
+          - isc-dhcp-client
+
     - name: DHCP Client Daemon Static IP
       ansible.builtin.copy:
         src: ./files/etc/dhcpcd.conf
