@@ -17,6 +17,6 @@
 
     - name: Service
       ansible.builtin.service:
-        name: dhcpcd
+        name: unbound
         state: restarted
       when: config.changed
