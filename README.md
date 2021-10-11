@@ -2,6 +2,15 @@
 
 My Raspeberry Pi DNS Server at Home
 
+## Technologies
+
+* Ansible
+* Raspberry Pi
+* SSH
+* udhcpd
+* ISC DHCP Client
+* Unbound
+
 ## Install
 
 ```
