@@ -48,6 +48,9 @@ all:
       - name: "foobar"
         ip_addr: "192.168.0.3"
         hw_addr: "AA:BB:CC:DD:EE:FF"
+      - name: "bazqux"
+        ip_addr: "192.168.0.4"
+        hw_addr: "00:11:22:AA:BB:CC"
 EOF
 ```
 
