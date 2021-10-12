@@ -44,6 +44,10 @@ all:
     raspberry_dhcpd_end: "192.168.0.254"
     raspberry_dhcpd_subnet: "255.255.255.0"
     raspberry_unbound_allow_cidr: "192.168.0.0/24"
+    raspberry_hosts:
+      - name: "foobar"
+        ip_addr: "192.168.0.3"
+        hw_addr: "AA:BB:CC:DD:EE:FF"
 EOF
 ```
 
