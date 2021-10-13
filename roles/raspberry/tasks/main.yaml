@@ -1,0 +1,4 @@
+- name: config
+  ansible.builtin.copy:
+    src: config.txt
+    dest: /boot/config.txt

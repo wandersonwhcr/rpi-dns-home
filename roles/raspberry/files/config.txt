@@ -1,0 +1,4 @@
+[all]
+dtoverlay=disable-bt
+dtoverlay=disable-wifi
+gpu_mem=64
