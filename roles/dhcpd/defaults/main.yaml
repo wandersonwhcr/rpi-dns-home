@@ -1,0 +1,6 @@
+rpi_dhcpd_addr_start:
+rpi_dhcpd_addr_end:
+rpi_dhcpd_addr_subnet:
+rpi_router_addr:
+rpi_domain:
+rpi_hosts: []

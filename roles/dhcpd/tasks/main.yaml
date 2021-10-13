@@ -1,3 +1,14 @@
+- name: assert
+  ansible.builtin.assert:
+    that:
+      - rpi_dhcpd_addr_start
+      - rpi_dhcpd_addr_end
+      - rpi_dhcpd_addr_subnet
+      - rpi_router_addr
+      - rpi_domain
+      - rpi_hosts
+    fail_msg: one or more variables are required
+
 - name: install
   ansible.builtin.apt:
     pkg:
