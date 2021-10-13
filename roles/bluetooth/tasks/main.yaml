@@ -1,0 +1,5 @@
+- name: service
+  ansible.builtin.service:
+    name: bluetooth
+    enabled: no
+    state: stopped
