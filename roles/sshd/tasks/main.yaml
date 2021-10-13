@@ -1,3 +1,9 @@
+- name: assert
+  ansible.builtin.assert:
+    that:
+      - rpi_addr
+    fail_msg: one or more variables are required
+
 - name: install
   ansible.builtin.apt:
     pkg:

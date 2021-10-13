@@ -1,4 +1,4 @@
-ListenAddress {{ raspberry_addr }}
+ListenAddress {{ rpi_addr }}
 
 UsePAM yes
 
