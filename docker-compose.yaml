@@ -14,4 +14,4 @@ services:
     working_dir: "/app"
     user: "${UID:-1000}:${GID:-1000}"
     entrypoint: ["ansible-playbook"]
-    command: ["main.yaml"]
+    command: ["playbook.yaml"]
