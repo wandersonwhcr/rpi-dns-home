@@ -1,0 +1,5 @@
+- name: service
+  ansible.builtin.service:
+    name: avahi-daemon
+    enabled: no
+    state: stopped
