@@ -1,0 +1,4 @@
+rpi_name:
+rpi_domain:
+rpi_cidr_allow:
+rpi_hosts: []
