@@ -3,3 +3,4 @@
   roles:
     - raspberry
     - packages
+    - sshd
