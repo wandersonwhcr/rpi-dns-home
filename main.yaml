@@ -8,3 +8,4 @@
     - bluetooth
     - dhcpd
     - dhcpcd
+    - unbound

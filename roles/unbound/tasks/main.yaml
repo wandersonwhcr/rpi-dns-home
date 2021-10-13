@@ -1,0 +1,13 @@
+- name: install
+  ansible.builtin.apt:
+    pkg:
+      - unbound
+
+- name: config
+  ansible.builtin.template:
+    src: unbound.conf
+    dest: /etc/unbound/unbound.conf
+    validate: /usr/sbin/unbound-checkconf %s
+    backup: yes
+  notify:
+    - service
