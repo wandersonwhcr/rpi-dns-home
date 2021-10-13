@@ -1,0 +1,28 @@
+- name: install
+  ansible.builtin.apt:
+    pkg:
+      - udhcpd
+
+- name: initd
+  ansible.builtin.copy:
+    src: udhcpd.initd
+    dest: /etc/init.d/udhcpd
+    backup: yes
+  notify:
+    - systemd
+
+- name: default
+  ansible.builtin.copy:
+    src: udhcpd.default
+    dest: /etc/default/udhcpd
+    backup: yes
+  notify:
+    - service
+
+- name: config
+  ansible.builtin.template:
+    src: udhcpd.conf
+    dest: /etc/udhcpd.conf
+    backup: yes
+  notify:
+    - service

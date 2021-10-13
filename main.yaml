@@ -6,3 +6,4 @@
     - sshd
     - avahi
     - bluetooth
+    - dhcpd
