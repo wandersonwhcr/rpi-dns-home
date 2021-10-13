@@ -11,3 +11,8 @@
     backup: yes
   notify:
     - service
+
+- name: service
+  ansible.builtin.service:
+    name: unbound
+    state: started
