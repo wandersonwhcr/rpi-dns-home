@@ -1,9 +1,0 @@
-- name: Bluetooth
-  hosts: all
-  tasks:
-
-    - name: Service
-      ansible.builtin.service:
-        name: bluetooth
-        enabled: no
-        state: stopped

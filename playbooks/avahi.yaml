@@ -1,9 +1,0 @@
-- name: Avahi
-  hosts: all
-  tasks:
-
-    - name: Service
-      ansible.builtin.service:
-        name: avahi-daemon
-        enabled: no
-        state: stopped

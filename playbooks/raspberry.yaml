@@ -1,8 +1,0 @@
-- name: Raspberry
-  hosts: all
-  tasks:
-
-    - name: Config
-      ansible.builtin.copy:
-        src: ./files/boot/config.txt
-        dest: /boot/config.txt
