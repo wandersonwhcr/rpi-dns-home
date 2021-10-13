@@ -10,8 +10,8 @@ services:
     volumes:
       - ".:/app"
     environment:
-      HOME: "/app"
+      HOME: "/tmp"
     working_dir: "/app"
     user: "${UID:-1000}:${GID:-1000}"
     entrypoint: ["ansible-playbook"]
-    command: ["playbooks/main.yaml"]
+    command: ["main.yaml"]

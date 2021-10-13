@@ -1,0 +1,15 @@
+- name: upgrade
+  ansible.builtin.apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: install
+  ansible.builtin.apt:
+    pkg:
+      - vim
+
+- name: clean
+  ansible.builtin.apt:
+    pkg:
+      - nano
+    state: absent

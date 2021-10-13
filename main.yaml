@@ -1,0 +1,4 @@
+- name: rpi-dns-home
+  hosts: all
+  roles:
+    - packages
