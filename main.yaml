@@ -7,3 +7,4 @@
     - avahi
     - bluetooth
     - dhcpd
+    - dhcpcd

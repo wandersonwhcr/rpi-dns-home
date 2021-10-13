@@ -1,0 +1,12 @@
+- name: install
+  ansible.builtin.apt:
+    pkg:
+      - isc-dhcp-client
+
+- name: config
+  ansible.builtin.template:
+    src: dhcpcd.conf
+    dest: /etc/dhcpcd.conf
+    backup: yes
+  notify:
+    - service
