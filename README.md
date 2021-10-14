@@ -18,18 +18,21 @@ RASPBERRY_ADDR=192.168.0.2
 ```
 
 ```
-ssh-keygen -t rsa -b 4096 -f dns-server.key -C '' -N ''
-ssh-copy-id -i dns-server.key.pub pi@$RASPBERRY_ADDR
-ssh -i dns-server.key pi@$RASPBERRY_ADDR hostname
+ssh-keygen -t rsa -b 4096 -f server.key -C '' -N ''
+ssh-copy-id -i server.key.pub pi@$RASPBERRY_ADDR
+ssh -i server.key pi@$RASPBERRY_ADDR hostname
 ```
 
 ```
 cat > inventory.yaml <<EOF
 all:
   vars:
-    # ...
-    # Basic Ansible Vars
-    # ...
+    ansible_user: "pi"
+    ansible_ssh_private_key_file: "server.key"
+    ansible_host_key_checking: false
+    ansible_become: true
+    ansible_become_user: "root"
+    ansible_python_interpreter: "/usr/bin/python"
   children:
     rpi:
       hosts:
