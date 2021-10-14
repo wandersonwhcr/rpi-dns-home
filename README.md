@@ -66,6 +66,9 @@ EOF
 ## Running
 
 ```
+ansible-playbook playbook.yaml
+
+# or via docker
 docker-compose run --rm ansible
 ```
 
