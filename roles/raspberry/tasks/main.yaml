@@ -1,4 +1,14 @@
+- name: assert
+  ansible.builtin.assert:
+    that:
+      - rpi_name
+    fail_msg: one or more variables are required
+
 - name: config
   ansible.builtin.copy:
     src: config.txt
     dest: /boot/config.txt
+
+- name: hostname
+  ansible.builtin.hostname:
+    name: "{{ rpi_name }}"
