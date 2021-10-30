@@ -2,3 +2,10 @@
   ansible.builtin.apt:
     pkg:
       - python-pip
+
+- name: upgrade
+  ansible.builtin.pip:
+    name:
+      - pip
+      - virtualenv
+    state: latest
