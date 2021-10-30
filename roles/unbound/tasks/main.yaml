@@ -21,6 +21,13 @@
   notify:
     - service
 
+- name: unit
+  ansible.builtin.copy:
+    src: unbound.service.d
+    dest: /etc/systemd/system/
+  notify:
+    - systemd
+
 - name: service
   ansible.builtin.service:
     name: unbound
