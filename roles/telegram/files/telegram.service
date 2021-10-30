@@ -1,0 +1,10 @@
+[Unit]
+Description=Telegram Bot
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/src/telegram/bin/python /usr/local/src/telegram/message.py Started
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

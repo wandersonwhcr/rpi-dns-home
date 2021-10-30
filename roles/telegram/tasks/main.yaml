@@ -18,3 +18,8 @@
   ansible.builtin.copy:
     src: message.py
     dest: /usr/local/src/telegram/message.py
+
+- name: service
+  ansible.builtin.copy:
+    src: telegram.service
+    dest: /etc/systemd/system/telegram.service
