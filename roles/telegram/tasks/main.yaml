@@ -3,9 +3,12 @@
     pkg:
       - python-pip
 
-- name: upgrade
+- name: pip
   ansible.builtin.pip:
-    name:
-      - pip
-      - virtualenv
+    name: pip
     state: latest
+
+- name: virtualenv
+  ansible.builtin.pip:
+    name: virtualenv
+    version: 20.4.7
