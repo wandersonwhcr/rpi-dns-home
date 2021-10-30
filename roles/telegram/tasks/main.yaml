@@ -1,3 +1,10 @@
+- name: assert
+  ansible.builtin.assert:
+    that:
+      - rpi_telegram_token
+      - rpi_telegram_chat_id
+    fail_msg: one or more variables are required
+
 - name: packages
   ansible.builtin.apt:
     pkg:
