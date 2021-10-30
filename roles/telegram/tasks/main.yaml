@@ -20,6 +20,11 @@
     dest: /usr/local/src/telegram/message.py
 
 - name: service
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: telegram.service
     dest: /etc/systemd/system/telegram.service
+
+- name: systemd
+  ansible.builtin.systemd:
+    name: telegram
+    enabled: yes
