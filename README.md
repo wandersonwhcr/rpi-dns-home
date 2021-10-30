@@ -60,6 +60,9 @@ all:
           - name: "foobar"
             ip_addr: "192.168.0.3"
             hw_addr: "DD:EE:FF:33:44:55"
+        # Telegram
+        rpi_telegram_token: "TOKEN"
+        rpi_telegram_chat_id: "-000000000"
 EOF
 ```
 
