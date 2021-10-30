@@ -1,0 +1,4 @@
+- name: packages
+  ansible.builtin.apt:
+    pkg:
+      - python-pip
