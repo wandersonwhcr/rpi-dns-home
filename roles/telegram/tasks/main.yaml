@@ -1,6 +1,8 @@
 - name: packages
   ansible.builtin.apt:
     pkg:
+      - libffi-dev
+      - libssl-dev
       - python-pip
 
 - name: pip
@@ -12,3 +14,9 @@
   ansible.builtin.pip:
     name: virtualenv
     version: 20.4.7
+
+- name: dependencies
+  ansible.builtin.pip:
+    name:
+      - python-telegram-bot
+    virtualenv: /usr/local/src/telegram
