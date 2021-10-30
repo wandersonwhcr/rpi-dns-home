@@ -1,3 +1,7 @@
+- name: systemd
+  ansible.builtin.systemd:
+    daemon_reload: yes
+
 - name: service
   ansible.builtin.service:
     name: unbound
