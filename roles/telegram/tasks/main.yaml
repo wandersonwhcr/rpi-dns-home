@@ -1,0 +1,39 @@
+- name: assert
+  ansible.builtin.assert:
+    that:
+      - rpi_telegram_token
+      - rpi_telegram_chat_id
+    fail_msg: one or more variables are required
+
+- name: packages
+  ansible.builtin.apt:
+    pkg:
+      - libffi-dev
+      - libssl-dev
+      - python3
+      - python3-pip
+      - python3-venv
+
+- name: dependencies
+  ansible.builtin.pip:
+    name:
+      - python-telegram-bot
+    virtualenv: /usr/local/src/telegram
+    virtualenv_command: /usr/bin/python3 -m venv
+
+- name: source
+  ansible.builtin.copy:
+    src: message.py
+    dest: /usr/local/src/telegram/message.py
+
+- name: service
+  ansible.builtin.template:
+    src: telegram.service
+    dest: /etc/systemd/system/telegram.service
+  notify:
+    - systemd
+
+- name: enable
+  ansible.builtin.systemd:
+    name: telegram
+    enabled: yes
