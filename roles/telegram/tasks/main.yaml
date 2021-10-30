@@ -13,3 +13,8 @@
       - python-telegram-bot
     virtualenv: /usr/local/src/telegram
     virtualenv_command: /usr/bin/python3 -m venv
+
+- name: source
+  ansible.builtin.copy:
+    src: message.py
+    dest: /usr/local/src/telegram/message.py
