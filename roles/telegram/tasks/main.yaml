@@ -3,20 +3,13 @@
     pkg:
       - libffi-dev
       - libssl-dev
-      - python-pip
-
-- name: pip
-  ansible.builtin.pip:
-    name: pip
-    state: latest
-
-- name: virtualenv
-  ansible.builtin.pip:
-    name: virtualenv
-    version: 20.4.7
+      - python3
+      - python3-pip
+      - python3-venv
 
 - name: dependencies
   ansible.builtin.pip:
     name:
       - python-telegram-bot
     virtualenv: /usr/local/src/telegram
+    virtualenv_command: /usr/bin/python3 -m venv
